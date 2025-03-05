@@ -1,15 +1,27 @@
 const db = require("../config/db");
 
-// Add a new school to the database
-const addSchool = (name, address, latitude, longitude, callback) => {
-    const query = "INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)";
-    db.query(query, [name, address, latitude, longitude], callback);
-};
-
-// Get all schools from the database
+// Fetch all schools
 const getAllSchools = (callback) => {
-    const query = "SELECT * FROM schools";
-    db.query(query, callback);
+  db.query("SELECT * FROM schools", (err, results) => {
+    if (err) {
+      return callback(err, null);
+    }
+    callback(null, results);
+  });
 };
 
-module.exports = { addSchool, getAllSchools };
+// Add a new school
+const addSchool = (name, address, latitude, longitude, callback) => {
+  db.query(
+    "INSERT INTO schools (name, address, latitude, longitude) VALUES (?, ?, ?, ?)",
+    [name, address, latitude, longitude],
+    (err, results) => {
+      if (err) {
+        return callback(err, null);
+      }
+      callback(null, results);
+    }
+  );
+};
+
+module.exports = { getAllSchools, addSchool };
