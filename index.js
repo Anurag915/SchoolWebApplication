@@ -12,3 +12,7 @@ app.use("/api", schoolRoutes);
 app.listen(PORT, () => {
   console.log(`🚀 Server running at http://localhost:${PORT}`);
 });
+
+app.get("/",(req,res)=>{
+    res.send("welcome to our website");
+});
