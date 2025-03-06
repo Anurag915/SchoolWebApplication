@@ -95,6 +95,9 @@ This application uses **Aiven** for remote MySQL database hosting. Ensure you ha
 - Correct **credentials** configured in the `.env` file
 - Proper **firewall and network settings** to allow connections
 
+## API Documentation
+For detailed API documentation, visit: [Postman Documentation](https://documenter.getpostman.com/view/35201032/2sAYdmk7zw)
+
 ## Contributing
 Contributions are welcome! Feel free to fork the repository and submit a pull request.
 
