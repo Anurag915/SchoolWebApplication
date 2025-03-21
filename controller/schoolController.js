@@ -1,15 +1,5 @@
 const School = require("../models/schoolModel");
 
-
-// const getSchools = (req, res) => {
-//   School.getAllSchools((err, schools) => {
-//     if (err) {
-//       return res.status(500).json({ error: "Database error", details: err.message });
-//     }
-//     res.status(200).json(schools);
-//   });
-// };
-
 const calculateDistance = (lat1, lon1, lat2, lon2) => {
     const toRad = (value) => (value * Math.PI) / 180;
     const R = 6371; // Earth radius in km
@@ -66,7 +56,7 @@ const addNewSchool = (req, res) => {
     if (err) {
       return res.status(500).json({ error: "Database error", details: err.message });
     }
-    res.status(201).json({ message: "School added successfully!", schoolId: result.insertId });
+    res.status(201).json({ message: "Congratulations your has been added successfully!", schoolId: result.insertId });
   });
 };
 
